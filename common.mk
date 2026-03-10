@@ -199,6 +199,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.memtrack-service
 
+# Micharge
+PRODUCT_PACKAGES += \
+    vendor.xiaomi.hardware.micharge-service-dummy
+
 # Mountpoint
 $(call soong_config_set,rfs,mpss_firmware_symlink_target,modem_firmware)
 

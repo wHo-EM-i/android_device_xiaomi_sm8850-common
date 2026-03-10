@@ -1,6 +1,7 @@
 unix_socket_connect(hal_audio_default, property, hal_sensors_default)
 
 hal_client_domain(hal_audio_default, hal_aidl_dms)
+binder_call(hal_audio_default, hal_micharge_default)
 
 get_prop(hal_audio_default, vendor_audio_cloud_ctrl_mi_prop)
 
