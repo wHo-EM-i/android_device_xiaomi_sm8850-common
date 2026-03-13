@@ -38,5 +38,5 @@ on post-fs-data
     chmod 0660 /sys/class/xm_power/charger/smart_charge/smart_night
 
 on property:sys.boot_completed=1
-    # Set thermal mode to tgame
-    write /sys/devices/virtual/thermal/thermal_message/sconfig 18
+    # Set thermal mode to mgame
+    write /sys/devices/virtual/thermal/thermal_message/sconfig 19
