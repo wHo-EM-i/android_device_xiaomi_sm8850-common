@@ -54,13 +54,17 @@ PRODUCT_VIRTUAL_AB_COMPRESSION_METHOD := lz4
 
 # Audio
 PRODUCT_PACKAGES += \
+    audio.bluetooth.default \
+    audio.primary.default \
+    audio.r_submix.default \
+    audio.usb.default
+
+PRODUCT_PACKAGES += \
+    android.hardware.audio.core-V2-ndk.vendor \
     android.hardware.audio.core-V3-ndk.vendor \
     android.hardware.audio.core.sounddose-V1-ndk.vendor \
     android.hardware.audio.core.sounddose-V3-ndk.vendor \
     android.media.audio.common.types-V4-ndk.vendor \
-    audio.bluetooth.default \
-    audio.r_submix.default \
-    audio.usb.default \
     libalsautilsv2.vendor \
     libaudio_aidl_conversion_common_ndk.vendor \
     libaudioutils_shim \
@@ -260,6 +264,7 @@ $(call soong_config_set,lineage_powershare,powershare_path,/sys/class/xm_power/c
 
 # QSPA
 PRODUCT_PACKAGES += \
+    qspa_vendor.rc \
     vendor.qti.qspa-service
 
 # Rootdir
