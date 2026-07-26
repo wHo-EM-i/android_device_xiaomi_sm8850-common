@@ -33,8 +33,14 @@ vendor.audio.rt.mode=18
 vendor.audio.rt.mode.onlyfast=true
 
 # Camera
-debug.config.video.p3.encode.support=true
 debug.config.video.p3.decode.support=true
+debug.config.video.p3.encode.support=true
+persist.vendor.camera.cameramind.supported=true
+persist.vendor.camera.cloud.camerabpf.enable=1
+persist.vendor.cameraopt.loglevel=0
+ro.product.camera.livephoto.support=3
+ro.vendor.camera.interpolation.mialgo.support=true
+ro.vendor.dynamiccamera.ability_level=2
 
 # Display
 ro.vendor.display.ai_disp.enable=false
