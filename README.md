@@ -3,3 +3,5 @@
 Currently supported devices
 - Xiaomi 17 Pro Max (Popsicle)
 - Redmi K90 Pro Max / Poco F8 Ultra (Myron)
+- Redmi K100 Pro (Athens)
+- Redmi K100 Pro Max (Songyuan)
