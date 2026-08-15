@@ -25,6 +25,9 @@ $(call inherit-product, packages/modules/Virtualization/apex/product_packages.mk
 # Call the proprietary setup.
 $(call inherit-product, vendor/xiaomi/sm8850-common/sm8850-common-vendor.mk)
 
+# Disable APEX compression
+OVERRIDE_PRODUCT_COMPRESSED_APEX := false
+
 # SHIPPING API
 BOARD_SHIPPING_API_LEVEL := 202504
 PRODUCT_SHIPPING_API_LEVEL := 36
