@@ -48,8 +48,6 @@ lib_fixups: lib_fixups_user_type = {
 }
 
 blob_fixups: blob_fixups_user_type = {
-    'system_ext/etc/init/qspa_system.rc': blob_fixup()
-        .regex_replace(r'\$\{ro\.boot\.vendor\.qspa:-default\}', 'default'),
     (
         'vendor/lib64/libVoiceSdk.so',
         'vendor/lib64/libcapiv2uvvendor.so',
@@ -118,11 +116,17 @@ blob_fixups: blob_fixups_user_type = {
     ): blob_fixup()
         .replace_needed('libkeymint.so', 'libkeymint-sm8850.so')
         .replace_needed('libkeymint_remote_prov_support.so', 'libkeymint_remote_prov_support-sm8850.so')
-        .replace_needed('libkeymint_support.so', 'libkeymint_support-sm8850.so'),
+        .replace_needed('libkeymint_support.so', 'libkeymint_support-sm8850.so')
+        .replace_needed('android.hardware.security.keymint-V4-ndk', 'android.hardware.security.keymint-V5-ndk'),
     (
         'vendor/lib64/libkeymint_remote_prov_support-sm8850.so',
     ): blob_fixup()
-        .replace_needed('libcppcose_rkp.so', 'libcppcose_rkp-sm8850.so'),
+        .replace_needed('libcppcose_rkp.so', 'libcppcose_rkp-sm8850.so')
+        .replace_needed('android.hardware.security.keymint-V4-ndk', 'android.hardware.security.keymint-V5-ndk'),
+    (
+        'vendor/lib64/libkeymint_support-sm8850.so',
+    ): blob_fixup()
+        .replace_needed('android.hardware.security.keymint-V4-ndk', 'android.hardware.security.keymint-V5-ndk'),
     (
         'vendor/lib64/libaudioserviceexampleimpl.so',
     ): blob_fixup()
@@ -137,6 +141,9 @@ blob_fixups: blob_fixups_user_type = {
     'system_ext/lib64/libwfdservice.so': blob_fixup()
         .add_needed('libaudiobase.so')
         .replace_needed('android.media.audio.common.types-V4-cpp.so', 'android.media.audio.common.types-V5-cpp.so'),
+    'vendor/lib64/libkeymint-sm8850.so': blob_fixup()
+        .replace_needed('android.hardware.security.keymint-V4-ndk', 'android.hardware.security.keymint-V5-ndk')
+        .replace_needed('android.hardware.security.secureelement-V1-ndk', 'android.hardware.security.secureelement-V2-ndk'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
